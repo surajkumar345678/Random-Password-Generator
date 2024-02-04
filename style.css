@@ -1,64 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
-body{
-    background-color: #002339;
-    color: white;
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
 }
 
-.container{
-    margin: 12%;
+:root {
+    --primary-color: #3498db;
+}
+
+.container {
+    margin: 12% auto;
     width: 90%;
     max-width: 700px;
 }
-.display{
+
+.display {
     width: 100%;
     margin-top: 50px;
     margin-bottom: 30px;
-    background: white;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 26px 20px;
     border-radius: 1rem;
-
 }
-.fa-regular{
-    color: green;
+
+.fa-regular {
+    color: var(--primary-color);
     width: 30px;
     cursor: pointer;
 }
 
-.container h1{
+.container h1 {
     font-weight: 500;
     font-size: 45px;
 }
-.container h1 span{
-    color: #019f55;
-    border-bottom: 4px solid #019f55;
+
+.container h1 span {
+    color: var(--primary-color);
+    border-bottom: 4px solid var(--primary-color);
     padding-bottom: 7px;
 }
 
-.display input{
+.display input {
     border: 0;
     outline: 0;
     font-size: 24px;
-
+    color: #333;
 }
 
-.container button img{
+.container button img {
     margin-right: 10px;
 }
 
-.container button{
+.container button {
     border: 0;
     outline: 0;
-    background: #019f55;
+    background: var(--primary-color);
     color: white;
     font-size: 22px;
     font-weight: 300;
@@ -68,4 +76,60 @@ body{
     padding: 16px 26px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
+
+.container button:hover {
+    background: #2980b9;
+}
+
+.fa-regular:hover {
+    color: #27ae60;
+}
+
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Tooltip arrow */
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #3498db transparent transparent transparent;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
